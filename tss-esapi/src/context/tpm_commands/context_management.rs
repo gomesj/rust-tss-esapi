@@ -2,9 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 use crate::{
     context::handle_manager::HandleDropAction,
-    handles::{handle_conversion::TryIntoNotNone, AuthHandle, ObjectHandle, PersistentTpmHandle},
+    handles::{
+        handle_conversion::TryIntoNotNone, AuthHandle, ObjectHandle, PersistentTpmHandle,
+        SessionHandle,
+    },
     interface_types::{dynamic_handles::Persistent, resource_handles::Provision},
-    tss2_esys::{Esys_ContextLoad, Esys_ContextSave, Esys_EvictControl, Esys_FlushContext},
+    tss2_esys::{
+        Esys_ContextLoad, Esys_ContextSave, Esys_EvictControl, Esys_FlushContext,
+        Esys_TRSess_GetAttributes,
+    },
     utils::TpmsContext,
     Context, Result, ReturnCode,
 };
@@ -19,6 +25,22 @@ impl Context {
     /// * if conversion from `TPMS_CONTEXT` to `TpmsContext` fails, a `WrongParamSize` error will
     /// be returned
     pub fn context_save(&mut self, handle: ObjectHandle) -> Result<TpmsContext> {
+        // `Esys_ContextSave` of a session invalidates the underlying `ESYS_TR` object.
+        // Check if `handle` designates a session, and if so remove it from `handle_manager`.
+        let remove_handle = {
+            let mut _flags = 0;
+            ReturnCode::ensure_success(
+                unsafe {
+                    Esys_TRSess_GetAttributes(
+                        self.mut_context(),
+                        SessionHandle::from(handle).into(),
+                        &mut _flags,
+                    )
+                },
+                |_| {},
+            )
+        };
+
         let mut context_ptr = null_mut();
         ReturnCode::ensure_success(
             unsafe { Esys_ContextSave(self.mut_context(), handle.into(), &mut context_ptr) },
@@ -26,6 +48,15 @@ impl Context {
                 error!("Error in saving context: {:#010X}", ret);
             },
         )?;
+
+        if remove_handle.is_ok() {
+            // `Esys_ContextSave` technically closes its handle, but `handle_manager` expects
+            // `handle` to be flushed.
+            if let Err(e) = self.handle_manager.set_as_flushed(handle) {
+                error!("Error when dropping session handle: {e}");
+            }
+        }
+
         TpmsContext::try_from(Context::ffi_data_to_owned(context_ptr))
     }
 
