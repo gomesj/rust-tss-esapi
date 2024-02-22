@@ -17,38 +17,43 @@ pub const __USE_POSIX199506: u32 = 1;
 pub const __USE_XOPEN2K: u32 = 1;
 pub const __USE_XOPEN2K8: u32 = 1;
 pub const _ATFILE_SOURCE: u32 = 1;
+pub const __WORDSIZE: u32 = 64;
+pub const __WORDSIZE_TIME64_COMPAT32: u32 = 1;
+pub const __SYSCALL_WORDSIZE: u32 = 64;
+pub const __TIMESIZE: u32 = 64;
 pub const __USE_MISC: u32 = 1;
 pub const __USE_ATFILE: u32 = 1;
 pub const __USE_FORTIFY_LEVEL: u32 = 0;
 pub const __GLIBC_USE_DEPRECATED_GETS: u32 = 0;
 pub const __GLIBC_USE_DEPRECATED_SCANF: u32 = 0;
+pub const __GLIBC_USE_C2X_STRTOL: u32 = 0;
 pub const _STDC_PREDEF_H: u32 = 1;
 pub const __STDC_IEC_559__: u32 = 1;
+pub const __STDC_IEC_60559_BFP__: u32 = 201404;
 pub const __STDC_IEC_559_COMPLEX__: u32 = 1;
+pub const __STDC_IEC_60559_COMPLEX__: u32 = 201404;
 pub const __STDC_ISO_10646__: u32 = 201706;
 pub const __GNU_LIBRARY__: u32 = 6;
 pub const __GLIBC__: u32 = 2;
-pub const __GLIBC_MINOR__: u32 = 31;
+pub const __GLIBC_MINOR__: u32 = 38;
 pub const _SYS_CDEFS_H: u32 = 1;
 pub const __glibc_c99_flexarr_available: u32 = 1;
-pub const __WORDSIZE: u32 = 64;
-pub const __WORDSIZE_TIME64_COMPAT32: u32 = 1;
-pub const __SYSCALL_WORDSIZE: u32 = 64;
-pub const __LONG_DOUBLE_USES_FLOAT128: u32 = 0;
+pub const __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI: u32 = 0;
 pub const __HAVE_GENERIC_SELECTION: u32 = 1;
 pub const __GLIBC_USE_LIB_EXT2: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_BFP_EXT: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_BFP_EXT_C2X: u32 = 0;
+pub const __GLIBC_USE_IEC_60559_EXT: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_FUNCS_EXT: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X: u32 = 0;
 pub const __GLIBC_USE_IEC_60559_TYPES_EXT: u32 = 0;
 pub const _BITS_TYPES_H: u32 = 1;
-pub const __TIMESIZE: u32 = 64;
 pub const _BITS_TYPESIZES_H: u32 = 1;
 pub const __OFF_T_MATCHES_OFF64_T: u32 = 1;
 pub const __INO_T_MATCHES_INO64_T: u32 = 1;
 pub const __RLIM_T_MATCHES_RLIM64_T: u32 = 1;
 pub const __STATFS_MATCHES_STATFS64: u32 = 1;
+pub const __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64: u32 = 1;
 pub const __FD_SETSIZE: u32 = 1024;
 pub const _BITS_TIME64_H: u32 = 1;
 pub const _BITS_WCHAR_H: u32 = 1;
@@ -143,6 +148,9 @@ pub const TSS2_BASE_RC_NAME_ALREADY_EXISTS: u32 = 48;
 pub const TSS2_BASE_RC_NO_TPM: u32 = 49;
 pub const TSS2_BASE_RC_BAD_KEY: u32 = 50;
 pub const TSS2_BASE_RC_NO_HANDLE: u32 = 51;
+pub const TSS2_BASE_RC_NOT_PROVISIONED: u32 = 52;
+pub const TSS2_BASE_RC_ALREADY_PROVISIONED: u32 = 53;
+pub const TSS2_BASE_RC_CALLBACK_NULL: u32 = 54;
 pub const TSS2_LAYER_IMPLEMENTATION_SPECIFIC_OFFSET: u32 = 63488;
 pub const TSS2_LEVEL_IMPLEMENTATION_SPECIFIC_SHIFT: u32 = 11;
 pub const TPM2_MAX_COMMAND_SIZE: u32 = 4096;
@@ -234,7 +242,26 @@ pub const ESYS_TR_RH_ENDORSEMENT: u32 = 267;
 pub const ESYS_TR_RH_PLATFORM: u32 = 268;
 pub const ESYS_TR_RH_PLATFORM_NV: u32 = 269;
 pub const ESYS_TR_RH_AUTH_FIRST: u32 = 272;
-pub const ESYS_TR_MIN_OBJECT: u32 = 4096;
+pub const ESYS_TR_RH_ACT_FIRST: u32 = 288;
+pub const ESYS_TR_RH_ACT_0: u32 = 288;
+pub const ESYS_TR_RH_ACT_1: u32 = 289;
+pub const ESYS_TR_RH_ACT_2: u32 = 290;
+pub const ESYS_TR_RH_ACT_3: u32 = 291;
+pub const ESYS_TR_RH_ACT_4: u32 = 292;
+pub const ESYS_TR_RH_ACT_5: u32 = 293;
+pub const ESYS_TR_RH_ACT_6: u32 = 294;
+pub const ESYS_TR_RH_ACT_7: u32 = 295;
+pub const ESYS_TR_RH_ACT_8: u32 = 296;
+pub const ESYS_TR_RH_ACT_9: u32 = 297;
+pub const ESYS_TR_RH_ACT_A: u32 = 298;
+pub const ESYS_TR_RH_ACT_B: u32 = 299;
+pub const ESYS_TR_RH_ACT_C: u32 = 300;
+pub const ESYS_TR_RH_ACT_D: u32 = 301;
+pub const ESYS_TR_RH_ACT_E: u32 = 302;
+pub const ESYS_TR_RH_ACT_F: u32 = 303;
+pub const ESYS_TR_RH_ACT_LAST: u32 = 303;
+pub const ESYS_TR_RH_AC_FIRST: u32 = 320;
+pub const ESYS_TR_RH_AC_LAST: u32 = 65855;
 pub const _INTTYPES_H: u32 = 1;
 pub const ____gwchar_t_defined: u32 = 1;
 pub const __PRI64_PREFIX: &[u8; 2] = b"l\0";
@@ -403,7 +430,6 @@ pub const WNOWAIT: u32 = 16777216;
 pub const __WNOTHREAD: u32 = 536870912;
 pub const __WALL: u32 = 1073741824;
 pub const __WCLONE: u32 = 2147483648;
-pub const __ENUM_IDTYPE_T: u32 = 1;
 pub const __W_CONTINUED: u32 = 65535;
 pub const __WCOREFLAG: u32 = 128;
 pub const __HAVE_FLOAT128: u32 = 0;
@@ -448,7 +474,6 @@ pub const BYTE_ORDER: u32 = 1234;
 pub const _BITS_BYTESWAP_H: u32 = 1;
 pub const _BITS_UINTN_IDENTITY_H: u32 = 1;
 pub const _SYS_SELECT_H: u32 = 1;
-pub const __FD_ZERO_STOS: &[u8; 6] = b"stosq\0";
 pub const __sigset_t_defined: u32 = 1;
 pub const __timeval_defined: u32 = 1;
 pub const _STRUCT_TIMESPEC: u32 = 1;
@@ -540,6 +565,7 @@ pub type __id_t = ::std::os::raw::c_uint;
 pub type __time_t = ::std::os::raw::c_long;
 pub type __useconds_t = ::std::os::raw::c_uint;
 pub type __suseconds_t = ::std::os::raw::c_long;
+pub type __suseconds64_t = ::std::os::raw::c_long;
 pub type __daddr_t = ::std::os::raw::c_int;
 pub type __key_t = ::std::os::raw::c_int;
 pub type __clockid_t = ::std::os::raw::c_int;
@@ -688,8 +714,11 @@ pub type TPMA_STARTUP_CLEAR = u32;
 pub type TPMA_MEMORY = u32;
 pub type TPMA_CC = u32;
 pub type TPMA_MODES = u32;
+pub type TPMA_X509_KEY_USAGE = u32;
+pub type TPMA_ACT = u32;
 pub type TPMI_YES_NO = BYTE;
 pub type TPMI_DH_OBJECT = TPM2_HANDLE;
+pub type TPMI_DH_PARENT = TPM2_HANDLE;
 pub type TPMI_DH_PERSISTENT = TPM2_HANDLE;
 pub type TPMI_DH_ENTITY = TPM2_HANDLE;
 pub type TPMI_DH_PCR = TPM2_HANDLE;
@@ -697,9 +726,11 @@ pub type TPMI_SH_AUTH_SESSION = TPM2_HANDLE;
 pub type TPMI_SH_HMAC = TPM2_HANDLE;
 pub type TPMI_SH_POLICY = TPM2_HANDLE;
 pub type TPMI_DH_CONTEXT = TPM2_HANDLE;
+pub type TPMI_DH_SAVED = TPM2_HANDLE;
 pub type TPMI_RH_HIERARCHY = TPM2_HANDLE;
 pub type TPMI_RH_ENABLES = TPM2_HANDLE;
 pub type TPMI_RH_HIERARCHY_AUTH = TPM2_HANDLE;
+pub type TPMI_RH_HIERARCHY_POLICY = TPM2_HANDLE;
 pub type TPMI_RH_PLATFORM = TPM2_HANDLE;
 pub type TPMI_RH_OWNER = TPM2_HANDLE;
 pub type TPMI_RH_ENDORSEMENT = TPM2_HANDLE;
@@ -708,6 +739,8 @@ pub type TPMI_RH_CLEAR = TPM2_HANDLE;
 pub type TPMI_RH_NV_AUTH = TPM2_HANDLE;
 pub type TPMI_RH_LOCKOUT = TPM2_HANDLE;
 pub type TPMI_RH_NV_INDEX = TPM2_HANDLE;
+pub type TPMI_RH_AC = TPM2_HANDLE;
+pub type TPMI_RH_ACT = TPM2_HANDLE;
 pub type TPMI_ALG_HASH = TPM2_ALG_ID;
 pub type TPMI_ALG_ASYM = TPM2_ALG_ID;
 pub type TPMI_ALG_SYM = TPM2_ALG_ID;
@@ -717,10 +750,12 @@ pub type TPMI_ALG_KDF = TPM2_ALG_ID;
 pub type TPMI_ALG_SIG_SCHEME = TPM2_ALG_ID;
 pub type TPMI_ECC_KEY_EXCHANGE = TPM2_ALG_ID;
 pub type TPMI_ST_COMMAND_TAG = TPM2_ST;
+pub type TPMI_ALG_MAC_SCHEME = TPM2_ALG_ID;
+pub type TPMI_ALG_CIPHER_MODE = TPM2_ALG_ID;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct TPMS_EMPTY {
-    pub empty: [BYTE; 1usize],
+    pub empty: [UINT8; 1usize],
 }
 #[test]
 fn bindgen_test_layout_TPMS_EMPTY() {
@@ -748,50 +783,9 @@ fn bindgen_test_layout_TPMS_EMPTY() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct TPMS_ALGORITHM_DESCRIPTION {
-    pub alg: TPM2_ALG_ID,
-    pub attributes: TPMA_ALGORITHM,
-}
-#[test]
-fn bindgen_test_layout_TPMS_ALGORITHM_DESCRIPTION() {
-    const UNINIT: ::std::mem::MaybeUninit<TPMS_ALGORITHM_DESCRIPTION> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<TPMS_ALGORITHM_DESCRIPTION>(),
-        8usize,
-        concat!("Size of: ", stringify!(TPMS_ALGORITHM_DESCRIPTION))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<TPMS_ALGORITHM_DESCRIPTION>(),
-        4usize,
-        concat!("Alignment of ", stringify!(TPMS_ALGORITHM_DESCRIPTION))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).alg) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TPMS_ALGORITHM_DESCRIPTION),
-            "::",
-            stringify!(alg)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).attributes) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TPMS_ALGORITHM_DESCRIPTION),
-            "::",
-            stringify!(attributes)
-        )
-    );
-}
-#[repr(C)]
 #[derive(Copy, Clone)]
 pub union TPMU_HA {
+    pub sha: [BYTE; 20usize],
     pub sha1: [BYTE; 20usize],
     pub sha256: [BYTE; 32usize],
     pub sha384: [BYTE; 48usize],
@@ -811,6 +805,16 @@ fn bindgen_test_layout_TPMU_HA() {
         ::std::mem::align_of::<TPMU_HA>(),
         1usize,
         concat!("Alignment of ", stringify!(TPMU_HA))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).sha) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_HA),
+            "::",
+            stringify!(sha)
+        )
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).sha1) as usize - ptr as usize },
@@ -1840,6 +1844,58 @@ impl Default for TPMS_TAGGED_POLICY {
     }
 }
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct TPMS_ACT_DATA {
+    pub handle: TPM2_HANDLE,
+    pub timeout: UINT32,
+    pub attributes: TPMA_ACT,
+}
+#[test]
+fn bindgen_test_layout_TPMS_ACT_DATA() {
+    const UNINIT: ::std::mem::MaybeUninit<TPMS_ACT_DATA> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPMS_ACT_DATA>(),
+        12usize,
+        concat!("Size of: ", stringify!(TPMS_ACT_DATA))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPMS_ACT_DATA>(),
+        4usize,
+        concat!("Alignment of ", stringify!(TPMS_ACT_DATA))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).handle) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMS_ACT_DATA),
+            "::",
+            stringify!(handle)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).timeout) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMS_ACT_DATA),
+            "::",
+            stringify!(timeout)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).attributes) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMS_ACT_DATA),
+            "::",
+            stringify!(attributes)
+        )
+    );
+}
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TPML_CC {
     pub count: UINT32,
@@ -2383,48 +2439,147 @@ impl Default for TPML_ECC_CURVE {
     }
 }
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct TPML_INTEL_PTT_PROPERTY {
+#[derive(Copy, Clone)]
+pub struct TPML_TAGGED_POLICY {
     pub count: UINT32,
-    pub property: [UINT32; 256usize],
+    pub policies: [TPMS_TAGGED_POLICY; 14usize],
 }
 #[test]
-fn bindgen_test_layout_TPML_INTEL_PTT_PROPERTY() {
-    const UNINIT: ::std::mem::MaybeUninit<TPML_INTEL_PTT_PROPERTY> =
-        ::std::mem::MaybeUninit::uninit();
+fn bindgen_test_layout_TPML_TAGGED_POLICY() {
+    const UNINIT: ::std::mem::MaybeUninit<TPML_TAGGED_POLICY> = ::std::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<TPML_INTEL_PTT_PROPERTY>(),
-        1028usize,
-        concat!("Size of: ", stringify!(TPML_INTEL_PTT_PROPERTY))
+        ::std::mem::size_of::<TPML_TAGGED_POLICY>(),
+        1012usize,
+        concat!("Size of: ", stringify!(TPML_TAGGED_POLICY))
     );
     assert_eq!(
-        ::std::mem::align_of::<TPML_INTEL_PTT_PROPERTY>(),
+        ::std::mem::align_of::<TPML_TAGGED_POLICY>(),
         4usize,
-        concat!("Alignment of ", stringify!(TPML_INTEL_PTT_PROPERTY))
+        concat!("Alignment of ", stringify!(TPML_TAGGED_POLICY))
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).count) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
-            stringify!(TPML_INTEL_PTT_PROPERTY),
+            stringify!(TPML_TAGGED_POLICY),
             "::",
             stringify!(count)
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).property) as usize - ptr as usize },
+        unsafe { ::std::ptr::addr_of!((*ptr).policies) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
-            stringify!(TPML_INTEL_PTT_PROPERTY),
+            stringify!(TPML_TAGGED_POLICY),
             "::",
-            stringify!(property)
+            stringify!(policies)
         )
     );
 }
-impl Default for TPML_INTEL_PTT_PROPERTY {
+impl Default for TPML_TAGGED_POLICY {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct TPML_ACT_DATA {
+    pub count: UINT32,
+    pub actData: [TPMS_ACT_DATA; 84usize],
+}
+#[test]
+fn bindgen_test_layout_TPML_ACT_DATA() {
+    const UNINIT: ::std::mem::MaybeUninit<TPML_ACT_DATA> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPML_ACT_DATA>(),
+        1012usize,
+        concat!("Size of: ", stringify!(TPML_ACT_DATA))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPML_ACT_DATA>(),
+        4usize,
+        concat!("Alignment of ", stringify!(TPML_ACT_DATA))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).count) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPML_ACT_DATA),
+            "::",
+            stringify!(count)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).actData) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPML_ACT_DATA),
+            "::",
+            stringify!(actData)
+        )
+    );
+}
+impl Default for TPML_ACT_DATA {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct TPM2B_MAX_CAP_BUFFER {
+    pub size: UINT16,
+    pub buffer: [BYTE; 1024usize],
+}
+#[test]
+fn bindgen_test_layout_TPM2B_MAX_CAP_BUFFER() {
+    const UNINIT: ::std::mem::MaybeUninit<TPM2B_MAX_CAP_BUFFER> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPM2B_MAX_CAP_BUFFER>(),
+        1026usize,
+        concat!("Size of: ", stringify!(TPM2B_MAX_CAP_BUFFER))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPM2B_MAX_CAP_BUFFER>(),
+        2usize,
+        concat!("Alignment of ", stringify!(TPM2B_MAX_CAP_BUFFER))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPM2B_MAX_CAP_BUFFER),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).buffer) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPM2B_MAX_CAP_BUFFER),
+            "::",
+            stringify!(buffer)
+        )
+    );
+}
+impl Default for TPM2B_MAX_CAP_BUFFER {
     fn default() -> Self {
         let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
         unsafe {
@@ -2445,7 +2600,9 @@ pub union TPMU_CAPABILITIES {
     pub tpmProperties: TPML_TAGGED_TPM_PROPERTY,
     pub pcrProperties: TPML_TAGGED_PCR_PROPERTY,
     pub eccCurves: TPML_ECC_CURVE,
-    pub intelPttProperty: TPML_INTEL_PTT_PROPERTY,
+    pub authPolicies: TPML_TAGGED_POLICY,
+    pub actData: TPML_ACT_DATA,
+    pub vendor: TPM2B_MAX_CAP_BUFFER,
 }
 #[test]
 fn bindgen_test_layout_TPMU_CAPABILITIES() {
@@ -2552,13 +2709,33 @@ fn bindgen_test_layout_TPMU_CAPABILITIES() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).intelPttProperty) as usize - ptr as usize },
+        unsafe { ::std::ptr::addr_of!((*ptr).authPolicies) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
             stringify!(TPMU_CAPABILITIES),
             "::",
-            stringify!(intelPttProperty)
+            stringify!(authPolicies)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).actData) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_CAPABILITIES),
+            "::",
+            stringify!(actData)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).vendor) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_CAPABILITIES),
+            "::",
+            stringify!(vendor)
         )
     );
 }
@@ -3102,6 +3279,57 @@ impl Default for TPMS_NV_CERTIFY_INFO {
         }
     }
 }
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct TPMS_NV_DIGEST_CERTIFY_INFO {
+    pub indexName: TPM2B_NAME,
+    pub nvDigest: TPM2B_DIGEST,
+}
+#[test]
+fn bindgen_test_layout_TPMS_NV_DIGEST_CERTIFY_INFO() {
+    const UNINIT: ::std::mem::MaybeUninit<TPMS_NV_DIGEST_CERTIFY_INFO> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPMS_NV_DIGEST_CERTIFY_INFO>(),
+        136usize,
+        concat!("Size of: ", stringify!(TPMS_NV_DIGEST_CERTIFY_INFO))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPMS_NV_DIGEST_CERTIFY_INFO>(),
+        2usize,
+        concat!("Alignment of ", stringify!(TPMS_NV_DIGEST_CERTIFY_INFO))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).indexName) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMS_NV_DIGEST_CERTIFY_INFO),
+            "::",
+            stringify!(indexName)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).nvDigest) as usize - ptr as usize },
+        70usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMS_NV_DIGEST_CERTIFY_INFO),
+            "::",
+            stringify!(nvDigest)
+        )
+    );
+}
+impl Default for TPMS_NV_DIGEST_CERTIFY_INFO {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
 pub type TPMI_ST_ATTEST = TPM2_ST;
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -3507,6 +3735,7 @@ pub union TPMU_SYM_KEY_BITS {
     pub camellia: TPMI_CAMELLIA_KEY_BITS,
     pub sym: TPM2_KEY_BITS,
     pub exclusiveOr: TPMI_ALG_HASH,
+    pub null: TPMS_EMPTY,
 }
 #[test]
 fn bindgen_test_layout_TPMU_SYM_KEY_BITS() {
@@ -3572,6 +3801,16 @@ fn bindgen_test_layout_TPMU_SYM_KEY_BITS() {
             stringify!(exclusiveOr)
         )
     );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).null) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_SYM_KEY_BITS),
+            "::",
+            stringify!(null)
+        )
+    );
 }
 impl Default for TPMU_SYM_KEY_BITS {
     fn default() -> Self {
@@ -3589,6 +3828,8 @@ pub union TPMU_SYM_MODE {
     pub sm4: TPMI_ALG_SYM_MODE,
     pub camellia: TPMI_ALG_SYM_MODE,
     pub sym: TPMI_ALG_SYM_MODE,
+    pub exclusiveOr: TPMS_EMPTY,
+    pub null: TPMS_EMPTY,
 }
 #[test]
 fn bindgen_test_layout_TPMU_SYM_MODE() {
@@ -3642,6 +3883,26 @@ fn bindgen_test_layout_TPMU_SYM_MODE() {
             stringify!(TPMU_SYM_MODE),
             "::",
             stringify!(sym)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).exclusiveOr) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_SYM_MODE),
+            "::",
+            stringify!(exclusiveOr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).null) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_SYM_MODE),
+            "::",
+            stringify!(null)
         )
     );
 }
@@ -3848,6 +4109,189 @@ fn bindgen_test_layout_TPMS_SYMCIPHER_PARMS() {
     );
 }
 impl Default for TPMS_SYMCIPHER_PARMS {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct TPM2B_LABEL {
+    pub size: UINT16,
+    pub buffer: [BYTE; 32usize],
+}
+#[test]
+fn bindgen_test_layout_TPM2B_LABEL() {
+    const UNINIT: ::std::mem::MaybeUninit<TPM2B_LABEL> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPM2B_LABEL>(),
+        34usize,
+        concat!("Size of: ", stringify!(TPM2B_LABEL))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPM2B_LABEL>(),
+        2usize,
+        concat!("Alignment of ", stringify!(TPM2B_LABEL))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPM2B_LABEL),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).buffer) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPM2B_LABEL),
+            "::",
+            stringify!(buffer)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct TPMS_DERIVE {
+    pub label: TPM2B_LABEL,
+    pub context: TPM2B_LABEL,
+}
+#[test]
+fn bindgen_test_layout_TPMS_DERIVE() {
+    const UNINIT: ::std::mem::MaybeUninit<TPMS_DERIVE> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPMS_DERIVE>(),
+        68usize,
+        concat!("Size of: ", stringify!(TPMS_DERIVE))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPMS_DERIVE>(),
+        2usize,
+        concat!("Alignment of ", stringify!(TPMS_DERIVE))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).label) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMS_DERIVE),
+            "::",
+            stringify!(label)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).context) as usize - ptr as usize },
+        34usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMS_DERIVE),
+            "::",
+            stringify!(context)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct TPM2B_DERIVE {
+    pub size: UINT16,
+    pub buffer: [BYTE; 68usize],
+}
+#[test]
+fn bindgen_test_layout_TPM2B_DERIVE() {
+    const UNINIT: ::std::mem::MaybeUninit<TPM2B_DERIVE> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPM2B_DERIVE>(),
+        70usize,
+        concat!("Size of: ", stringify!(TPM2B_DERIVE))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPM2B_DERIVE>(),
+        2usize,
+        concat!("Alignment of ", stringify!(TPM2B_DERIVE))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPM2B_DERIVE),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).buffer) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPM2B_DERIVE),
+            "::",
+            stringify!(buffer)
+        )
+    );
+}
+impl Default for TPM2B_DERIVE {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union TPMU_SENSITIVE_CREATE {
+    pub create: [BYTE; 256usize],
+    pub derive: TPMS_DERIVE,
+}
+#[test]
+fn bindgen_test_layout_TPMU_SENSITIVE_CREATE() {
+    const UNINIT: ::std::mem::MaybeUninit<TPMU_SENSITIVE_CREATE> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPMU_SENSITIVE_CREATE>(),
+        256usize,
+        concat!("Size of: ", stringify!(TPMU_SENSITIVE_CREATE))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPMU_SENSITIVE_CREATE>(),
+        2usize,
+        concat!("Alignment of ", stringify!(TPMU_SENSITIVE_CREATE))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).create) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_SENSITIVE_CREATE),
+            "::",
+            stringify!(create)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).derive) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_SENSITIVE_CREATE),
+            "::",
+            stringify!(derive)
+        )
+    );
+}
+impl Default for TPMU_SENSITIVE_CREATE {
     fn default() -> Self {
         let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
         unsafe {
@@ -4127,6 +4571,7 @@ fn bindgen_test_layout_TPMS_SCHEME_XOR() {
 pub union TPMU_SCHEME_KEYEDHASH {
     pub hmac: TPMS_SCHEME_HMAC,
     pub exclusiveOr: TPMS_SCHEME_XOR,
+    pub null: TPMS_EMPTY,
 }
 #[test]
 fn bindgen_test_layout_TPMU_SCHEME_KEYEDHASH() {
@@ -4161,6 +4606,16 @@ fn bindgen_test_layout_TPMU_SCHEME_KEYEDHASH() {
             stringify!(TPMU_SCHEME_KEYEDHASH),
             "::",
             stringify!(exclusiveOr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).null) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_SCHEME_KEYEDHASH),
+            "::",
+            stringify!(null)
         )
     );
 }
@@ -4241,6 +4696,7 @@ pub union TPMU_SIG_SCHEME {
     pub ecschnorr: TPMS_SIG_SCHEME_ECSCHNORR,
     pub hmac: TPMS_SCHEME_HMAC,
     pub any: TPMS_SCHEME_HASH,
+    pub null: TPMS_EMPTY,
 }
 #[test]
 fn bindgen_test_layout_TPMU_SIG_SCHEME() {
@@ -4336,6 +4792,16 @@ fn bindgen_test_layout_TPMU_SIG_SCHEME() {
             stringify!(any)
         )
     );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).null) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_SIG_SCHEME),
+            "::",
+            stringify!(null)
+        )
+    );
 }
 impl Default for TPMU_SIG_SCHEME {
     fn default() -> Self {
@@ -4411,6 +4877,7 @@ pub union TPMU_KDF_SCHEME {
     pub kdf1_sp800_56a: TPMS_SCHEME_KDF1_SP800_56A,
     pub kdf2: TPMS_SCHEME_KDF2,
     pub kdf1_sp800_108: TPMS_SCHEME_KDF1_SP800_108,
+    pub null: TPMS_EMPTY,
 }
 #[test]
 fn bindgen_test_layout_TPMU_KDF_SCHEME() {
@@ -4464,6 +4931,16 @@ fn bindgen_test_layout_TPMU_KDF_SCHEME() {
             stringify!(TPMU_KDF_SCHEME),
             "::",
             stringify!(kdf1_sp800_108)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).null) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_KDF_SCHEME),
+            "::",
+            stringify!(null)
         )
     );
 }
@@ -4541,6 +5018,7 @@ pub union TPMU_ASYM_SCHEME {
     pub rsaes: TPMS_ENC_SCHEME_RSAES,
     pub oaep: TPMS_ENC_SCHEME_OAEP,
     pub anySig: TPMS_SCHEME_HASH,
+    pub null: TPMS_EMPTY,
 }
 #[test]
 fn bindgen_test_layout_TPMU_ASYM_SCHEME() {
@@ -4664,6 +5142,16 @@ fn bindgen_test_layout_TPMU_ASYM_SCHEME() {
             stringify!(TPMU_ASYM_SCHEME),
             "::",
             stringify!(anySig)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).null) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_ASYM_SCHEME),
+            "::",
+            stringify!(null)
         )
     );
 }
@@ -4883,7 +5371,7 @@ pub type TPMI_RSA_KEY_BITS = TPM2_KEY_BITS;
 #[derive(Debug, Copy, Clone)]
 pub struct TPM2B_PRIVATE_KEY_RSA {
     pub size: UINT16,
-    pub buffer: [BYTE; 256usize],
+    pub buffer: [BYTE; 1280usize],
 }
 #[test]
 fn bindgen_test_layout_TPM2B_PRIVATE_KEY_RSA() {
@@ -4892,7 +5380,7 @@ fn bindgen_test_layout_TPM2B_PRIVATE_KEY_RSA() {
     let ptr = UNINIT.as_ptr();
     assert_eq!(
         ::std::mem::size_of::<TPM2B_PRIVATE_KEY_RSA>(),
-        258usize,
+        1282usize,
         concat!("Size of: ", stringify!(TPM2B_PRIVATE_KEY_RSA))
     );
     assert_eq!(
@@ -5410,6 +5898,7 @@ pub union TPMU_SIGNATURE {
     pub ecschnorr: TPMS_SIGNATURE_ECSCHNORR,
     pub hmac: TPMT_HA,
     pub any: TPMS_SCHEME_HASH,
+    pub null: TPMS_EMPTY,
 }
 #[test]
 fn bindgen_test_layout_TPMU_SIGNATURE() {
@@ -5503,6 +5992,16 @@ fn bindgen_test_layout_TPMU_SIGNATURE() {
             stringify!(TPMU_SIGNATURE),
             "::",
             stringify!(any)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).null) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_SIGNATURE),
+            "::",
+            stringify!(null)
         )
     );
 }
@@ -5697,6 +6196,7 @@ pub union TPMU_PUBLIC_ID {
     pub sym: TPM2B_DIGEST,
     pub rsa: TPM2B_PUBLIC_KEY_RSA,
     pub ecc: TPMS_ECC_POINT,
+    pub derive: TPMS_DERIVE,
 }
 #[test]
 fn bindgen_test_layout_TPMU_PUBLIC_ID() {
@@ -5750,6 +6250,16 @@ fn bindgen_test_layout_TPMU_PUBLIC_ID() {
             stringify!(TPMU_PUBLIC_ID),
             "::",
             stringify!(ecc)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).derive) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPMU_PUBLIC_ID),
+            "::",
+            stringify!(derive)
         )
     );
 }
@@ -7348,7 +7858,6 @@ impl Default for TPM2B_CREATION_DATA {
 }
 pub type TPM_AT = UINT32;
 pub type TPM_EA = UINT32;
-pub type TPMI_RH_AC = TPM2_HANDLE;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
 pub struct TPMS_AC_OUTPUT {
@@ -7432,6 +7941,57 @@ fn bindgen_test_layout_TPML_AC_CAPABILITIES() {
     );
 }
 impl Default for TPML_AC_CAPABILITIES {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct TPML_INTEL_PTT_PROPERTY {
+    pub count: UINT32,
+    pub property: [UINT32; 256usize],
+}
+#[test]
+fn bindgen_test_layout_TPML_INTEL_PTT_PROPERTY() {
+    const UNINIT: ::std::mem::MaybeUninit<TPML_INTEL_PTT_PROPERTY> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<TPML_INTEL_PTT_PROPERTY>(),
+        1028usize,
+        concat!("Size of: ", stringify!(TPML_INTEL_PTT_PROPERTY))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TPML_INTEL_PTT_PROPERTY>(),
+        4usize,
+        concat!("Alignment of ", stringify!(TPML_INTEL_PTT_PROPERTY))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).count) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPML_INTEL_PTT_PROPERTY),
+            "::",
+            stringify!(count)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TPML_INTEL_PTT_PROPERTY),
+            "::",
+            stringify!(property)
+        )
+    );
+}
+impl Default for TPML_INTEL_PTT_PROPERTY {
     fn default() -> Self {
         let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
         unsafe {
@@ -8587,7 +9147,7 @@ extern "C" {
         sysContext: *mut TSS2_SYS_CONTEXT,
         keyHandle: TPMI_DH_OBJECT,
         decrypt: TPMI_YES_NO,
-        mode: TPMI_ALG_SYM_MODE,
+        mode: TPMI_ALG_CIPHER_MODE,
         ivIn: *const TPM2B_IV,
         inData: *const TPM2B_MAX_BUFFER,
     ) -> TSS2_RC;
@@ -8605,7 +9165,7 @@ extern "C" {
         keyHandle: TPMI_DH_OBJECT,
         cmdAuthsArray: *const TSS2L_SYS_AUTH_COMMAND,
         decrypt: TPMI_YES_NO,
-        mode: TPMI_ALG_SYM_MODE,
+        mode: TPMI_ALG_CIPHER_MODE,
         ivIn: *const TPM2B_IV,
         inData: *const TPM2B_MAX_BUFFER,
         outData: *mut TPM2B_MAX_BUFFER,
@@ -8619,7 +9179,7 @@ extern "C" {
         keyHandle: TPMI_DH_OBJECT,
         inData: *const TPM2B_MAX_BUFFER,
         decrypt: TPMI_YES_NO,
-        mode: TPMI_ALG_SYM_MODE,
+        mode: TPMI_ALG_CIPHER_MODE,
         ivIn: *const TPM2B_IV,
     ) -> TSS2_RC;
 }
@@ -8637,7 +9197,7 @@ extern "C" {
         cmdAuthsArray: *const TSS2L_SYS_AUTH_COMMAND,
         inData: *const TPM2B_MAX_BUFFER,
         decrypt: TPMI_YES_NO,
-        mode: TPMI_ALG_SYM_MODE,
+        mode: TPMI_ALG_CIPHER_MODE,
         ivIn: *const TPM2B_IV,
         outData: *mut TPM2B_MAX_BUFFER,
         ivOut: *mut TPM2B_IV,
@@ -8694,6 +9254,31 @@ extern "C" {
         hashAlg: TPMI_ALG_HASH,
         outHMAC: *mut TPM2B_DIGEST,
         rspAuthsArray: *mut TSS2L_SYS_AUTH_RESPONSE,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_MAC_Prepare(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        handle: TPMI_DH_OBJECT,
+        buffer: *const TPM2B_MAX_BUFFER,
+        inScheme: TPMI_ALG_MAC_SCHEME,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_MAC_Complete(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        outMAC: *mut TPM2B_DIGEST,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_MAC(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        handle: TPMI_DH_OBJECT,
+        cmdAuths: *const TSS2L_SYS_AUTH_COMMAND,
+        buffer: *const TPM2B_MAX_BUFFER,
+        inScheme: TPMI_ALG_MAC_SCHEME,
+        outMAC: *mut TPM2B_DIGEST,
+        rspAuths: *mut TSS2L_SYS_AUTH_RESPONSE,
     ) -> TSS2_RC;
 }
 extern "C" {
@@ -8755,6 +9340,31 @@ extern "C" {
         cmdAuthsArray: *const TSS2L_SYS_AUTH_COMMAND,
         auth: *const TPM2B_AUTH,
         hashAlg: TPMI_ALG_HASH,
+        sequenceHandle: *mut TPMI_DH_OBJECT,
+        rspAuthsArray: *mut TSS2L_SYS_AUTH_RESPONSE,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_MAC_Start_Prepare(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        handle: TPMI_DH_OBJECT,
+        auth: *const TPM2B_AUTH,
+        inScheme: TPMI_ALG_MAC_SCHEME,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_MAC_Start_Complete(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        sequenceHandle: *mut TPMI_DH_OBJECT,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_MAC_Start(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        handle: TPMI_DH_OBJECT,
+        cmdAuths: *const TSS2L_SYS_AUTH_COMMAND,
+        auth: *const TPM2B_AUTH,
+        inScheme: TPMI_ALG_MAC_SCHEME,
         sequenceHandle: *mut TPMI_DH_OBJECT,
         rspAuthsArray: *mut TSS2L_SYS_AUTH_RESPONSE,
     ) -> TSS2_RC;
@@ -8878,6 +9488,39 @@ extern "C" {
         qualifyingData: *const TPM2B_DATA,
         inScheme: *const TPMT_SIG_SCHEME,
         certifyInfo: *mut TPM2B_ATTEST,
+        signature: *mut TPMT_SIGNATURE,
+        rspAuthsArray: *mut TSS2L_SYS_AUTH_RESPONSE,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_CertifyX509_Prepare(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        objectHandle: TPMI_DH_OBJECT,
+        signHandle: TPMI_DH_OBJECT,
+        reserved: *const TPM2B_DATA,
+        inScheme: *const TPMT_SIG_SCHEME,
+        partialCertificate: *const TPM2B_MAX_BUFFER,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_CertifyX509_Complete(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        addedToCertificate: *mut TPM2B_MAX_BUFFER,
+        tbsDigest: *mut TPM2B_DIGEST,
+        signature: *mut TPMT_SIGNATURE,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_CertifyX509(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        objectHandle: TPMI_DH_OBJECT,
+        signHandle: TPMI_DH_OBJECT,
+        cmdAuthsArray: *const TSS2L_SYS_AUTH_COMMAND,
+        reserved: *const TPM2B_DATA,
+        inScheme: *const TPMT_SIG_SCHEME,
+        partialCertificate: *const TPM2B_MAX_BUFFER,
+        addedToCertificate: *mut TPM2B_MAX_BUFFER,
+        tbsDigest: *mut TPM2B_DIGEST,
         signature: *mut TPMT_SIGNATURE,
         rspAuthsArray: *mut TSS2L_SYS_AUTH_RESPONSE,
     ) -> TSS2_RC;
@@ -10128,7 +10771,9 @@ extern "C" {
 extern "C" {
     pub fn Tss2_Sys_ReadClock(
         sysContext: *mut TSS2_SYS_CONTEXT,
+        cmdAuthsArray: *const TSS2L_SYS_AUTH_COMMAND,
         currentTime: *mut TPMS_TIME_INFO,
+        rspAuthsArray: *mut TSS2L_SYS_AUTH_RESPONSE,
     ) -> TSS2_RC;
 }
 extern "C" {
@@ -10616,6 +11261,25 @@ extern "C" {
     ) -> TSS2_RC;
 }
 extern "C" {
+    pub fn Tss2_Sys_ACT_SetTimeout_Prepare(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        actHandle: TPMI_RH_ACT,
+        startTimeout: UINT32,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_ACT_SetTimeout_Complete(sysContext: *mut TSS2_SYS_CONTEXT) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_Sys_ACT_SetTimeout(
+        sysContext: *mut TSS2_SYS_CONTEXT,
+        actHandle: TPMI_RH_ACT,
+        cmdAuthsArray: *const TSS2L_SYS_AUTH_COMMAND,
+        startTimeout: UINT32,
+        rspAuthsArray: *mut TSS2L_SYS_AUTH_RESPONSE,
+    ) -> TSS2_RC;
+}
+extern "C" {
     pub fn Tss2_Sys_PolicyTemplate_Prepare(
         sysContext: *mut TSS2_SYS_CONTEXT,
         policySession: TPMI_SH_POLICY,
@@ -10691,6 +11355,321 @@ pub type ESYS_TR = u32;
 #[derive(Debug, Copy, Clone)]
 pub struct ESYS_CONTEXT {
     _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ESYS_CRYPTO_CONTEXT_BLOB {
+    _unused: [u8; 0],
+}
+pub type ESYS_CRYPTO_HASH_START_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut *mut ESYS_CRYPTO_CONTEXT_BLOB,
+        hashAlg: TPM2_ALG_ID,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_HASH_UPDATE_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut ESYS_CRYPTO_CONTEXT_BLOB,
+        buffer: *const u8,
+        size: size_t,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_HASH_FINISH_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut *mut ESYS_CRYPTO_CONTEXT_BLOB,
+        buffer: *mut u8,
+        size: *mut size_t,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_HASH_ABORT_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut *mut ESYS_CRYPTO_CONTEXT_BLOB,
+        userdata: *mut ::std::os::raw::c_void,
+    ),
+>;
+pub type ESYS_CRYPTO_HMAC_START_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut *mut ESYS_CRYPTO_CONTEXT_BLOB,
+        hashAlg: TPM2_ALG_ID,
+        key: *const u8,
+        size: size_t,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_HMAC_UPDATE_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut ESYS_CRYPTO_CONTEXT_BLOB,
+        buffer: *const u8,
+        size: size_t,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_HMAC_FINISH_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut *mut ESYS_CRYPTO_CONTEXT_BLOB,
+        buffer: *mut u8,
+        size: *mut size_t,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_HMAC_ABORT_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        context: *mut *mut ESYS_CRYPTO_CONTEXT_BLOB,
+        userdata: *mut ::std::os::raw::c_void,
+    ),
+>;
+pub type ESYS_CRYPTO_GET_RANDOM2B_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        nonce: *mut TPM2B_NONCE,
+        num_bytes: size_t,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_GET_ECDH_POINT_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        key: *mut TPM2B_PUBLIC,
+        max_out_size: size_t,
+        Z: *mut TPM2B_ECC_PARAMETER,
+        Q: *mut TPMS_ECC_POINT,
+        out_buffer: *mut BYTE,
+        out_size: *mut size_t,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_AES_ENCRYPT_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        key: *mut u8,
+        tpm_sym_alg: TPM2_ALG_ID,
+        key_bits: TPMI_AES_KEY_BITS,
+        tpm_mode: TPM2_ALG_ID,
+        buffer: *mut u8,
+        buffer_size: size_t,
+        iv: *mut u8,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_AES_DECRYPT_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        key: *mut u8,
+        tpm_sym_alg: TPM2_ALG_ID,
+        key_bits: TPMI_AES_KEY_BITS,
+        tpm_mode: TPM2_ALG_ID,
+        buffer: *mut u8,
+        buffer_size: size_t,
+        iv: *mut u8,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_PK_RSA_ENCRYPT_FNP = ::std::option::Option<
+    unsafe extern "C" fn(
+        pub_tpm_key: *mut TPM2B_PUBLIC,
+        in_size: size_t,
+        in_buffer: *mut BYTE,
+        max_out_size: size_t,
+        out_buffer: *mut BYTE,
+        out_size: *mut size_t,
+        label: *const ::std::os::raw::c_char,
+        userdata: *mut ::std::os::raw::c_void,
+    ) -> TSS2_RC,
+>;
+pub type ESYS_CRYPTO_INIT_FNP =
+    ::std::option::Option<unsafe extern "C" fn(userdata: *mut ::std::os::raw::c_void) -> TSS2_RC>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ESYS_CRYPTO_CALLBACKS {
+    pub rsa_pk_encrypt: ESYS_CRYPTO_PK_RSA_ENCRYPT_FNP,
+    pub hash_start: ESYS_CRYPTO_HASH_START_FNP,
+    pub hash_update: ESYS_CRYPTO_HASH_UPDATE_FNP,
+    pub hash_finish: ESYS_CRYPTO_HASH_FINISH_FNP,
+    pub hash_abort: ESYS_CRYPTO_HASH_ABORT_FNP,
+    pub hmac_start: ESYS_CRYPTO_HMAC_START_FNP,
+    pub hmac_update: ESYS_CRYPTO_HMAC_UPDATE_FNP,
+    pub hmac_finish: ESYS_CRYPTO_HMAC_FINISH_FNP,
+    pub hmac_abort: ESYS_CRYPTO_HMAC_ABORT_FNP,
+    pub get_random2b: ESYS_CRYPTO_GET_RANDOM2B_FNP,
+    pub get_ecdh_point: ESYS_CRYPTO_GET_ECDH_POINT_FNP,
+    pub aes_encrypt: ESYS_CRYPTO_AES_ENCRYPT_FNP,
+    pub aes_decrypt: ESYS_CRYPTO_AES_DECRYPT_FNP,
+    pub init: ESYS_CRYPTO_INIT_FNP,
+    pub userdata: *mut ::std::os::raw::c_void,
+}
+#[test]
+fn bindgen_test_layout_ESYS_CRYPTO_CALLBACKS() {
+    const UNINIT: ::std::mem::MaybeUninit<ESYS_CRYPTO_CALLBACKS> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<ESYS_CRYPTO_CALLBACKS>(),
+        120usize,
+        concat!("Size of: ", stringify!(ESYS_CRYPTO_CALLBACKS))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<ESYS_CRYPTO_CALLBACKS>(),
+        8usize,
+        concat!("Alignment of ", stringify!(ESYS_CRYPTO_CALLBACKS))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).rsa_pk_encrypt) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(rsa_pk_encrypt)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hash_start) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(hash_start)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hash_update) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(hash_update)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hash_finish) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(hash_finish)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hash_abort) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(hash_abort)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hmac_start) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(hmac_start)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hmac_update) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(hmac_update)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hmac_finish) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(hmac_finish)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hmac_abort) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(hmac_abort)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_random2b) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(get_random2b)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_ecdh_point) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(get_ecdh_point)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).aes_encrypt) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(aes_encrypt)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).aes_decrypt) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(aes_decrypt)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).init) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(init)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).userdata) as usize - ptr as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ESYS_CRYPTO_CALLBACKS),
+            "::",
+            stringify!(userdata)
+        )
+    );
+}
+impl Default for ESYS_CRYPTO_CALLBACKS {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
 }
 extern "C" {
     pub fn Esys_Initialize(
@@ -11044,7 +12023,7 @@ extern "C" {
         shandle3: ESYS_TR,
         inPrivate: *const TPM2B_SENSITIVE,
         inPublic: *const TPM2B_PUBLIC,
-        hierarchy: TPMI_RH_HIERARCHY,
+        hierarchy: ESYS_TR,
         objectHandle: *mut ESYS_TR,
     ) -> TSS2_RC;
 }
@@ -11056,7 +12035,7 @@ extern "C" {
         shandle3: ESYS_TR,
         inPrivate: *const TPM2B_SENSITIVE,
         inPublic: *const TPM2B_PUBLIC,
-        hierarchy: TPMI_RH_HIERARCHY,
+        hierarchy: ESYS_TR,
     ) -> TSS2_RC;
 }
 extern "C" {
@@ -11123,6 +12102,118 @@ extern "C" {
     pub fn Esys_ActivateCredential_Finish(
         esysContext: *mut ESYS_CONTEXT,
         certInfo: *mut *mut TPM2B_DIGEST,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_ACT_SetTimeout(
+        esysContext: *mut ESYS_CONTEXT,
+        actHandle: ESYS_TR,
+        shandle1: ESYS_TR,
+        shandle2: ESYS_TR,
+        shandle3: ESYS_TR,
+        startTimeout: UINT32,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_ACT_SetTimeout_Async(
+        esysContext: *mut ESYS_CONTEXT,
+        actHandle: ESYS_TR,
+        shandle1: ESYS_TR,
+        shandle2: ESYS_TR,
+        shandle3: ESYS_TR,
+        startTimeout: UINT32,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_ACT_SetTimeout_Finish(esysContext: *mut ESYS_CONTEXT) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_AC_GetCapability_Async(
+        esysContext: *mut ESYS_CONTEXT,
+        optionalSession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        ac: ESYS_TR,
+        capability: TPM_AT,
+        count: UINT32,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_AC_GetCapability_Finish(
+        esysContext: *mut ESYS_CONTEXT,
+        moreData: *mut TPMI_YES_NO,
+        capabilityData: *mut *mut TPML_AC_CAPABILITIES,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_AC_GetCapability(
+        esysContext: *mut ESYS_CONTEXT,
+        optionalSession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        ac: ESYS_TR,
+        capability: TPM_AT,
+        count: UINT32,
+        moreData: *mut TPMI_YES_NO,
+        capabilityData: *mut *mut TPML_AC_CAPABILITIES,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_AC_Send_Async(
+        esysContext: *mut ESYS_CONTEXT,
+        sendObject: ESYS_TR,
+        nvAuthHandle: ESYS_TR,
+        optionalSession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        ac: ESYS_TR,
+        acDataIn: *mut TPM2B_MAX_BUFFER,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_AC_Send_Finish(
+        esysContext: *mut ESYS_CONTEXT,
+        acDataOut: *mut *mut TPMS_AC_OUTPUT,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_AC_Send(
+        esysContext: *mut ESYS_CONTEXT,
+        sendObject: ESYS_TR,
+        nvAuthHandle: ESYS_TR,
+        optionalSession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        ac: ESYS_TR,
+        acDataIn: *mut TPM2B_MAX_BUFFER,
+        acDataOut: *mut *mut TPMS_AC_OUTPUT,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_Policy_AC_SendSelect_Async(
+        esysContext: *mut ESYS_CONTEXT,
+        policySession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        objectName: *mut TPM2B_NAME,
+        authHandleName: *mut TPM2B_NAME,
+        acName: *mut TPM2B_NAME,
+        includeObject: TPMI_YES_NO,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_Policy_AC_SendSelect_Finish(esysContext: *mut ESYS_CONTEXT) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_Policy_AC_SendSelect(
+        esysContext: *mut ESYS_CONTEXT,
+        policySession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        objectName: *mut TPM2B_NAME,
+        authHandleName: *mut TPM2B_NAME,
+        acName: *mut TPM2B_NAME,
+        includeObject: TPMI_YES_NO,
     ) -> TSS2_RC;
 }
 extern "C" {
@@ -11532,7 +12623,7 @@ extern "C" {
         shandle2: ESYS_TR,
         shandle3: ESYS_TR,
         decrypt: TPMI_YES_NO,
-        mode: TPMI_ALG_SYM_MODE,
+        mode: TPMI_ALG_CIPHER_MODE,
         ivIn: *const TPM2B_IV,
         inData: *const TPM2B_MAX_BUFFER,
         outData: *mut *mut TPM2B_MAX_BUFFER,
@@ -11547,7 +12638,7 @@ extern "C" {
         shandle2: ESYS_TR,
         shandle3: ESYS_TR,
         decrypt: TPMI_YES_NO,
-        mode: TPMI_ALG_SYM_MODE,
+        mode: TPMI_ALG_CIPHER_MODE,
         ivIn: *const TPM2B_IV,
         inData: *const TPM2B_MAX_BUFFER,
     ) -> TSS2_RC;
@@ -11568,7 +12659,7 @@ extern "C" {
         shandle3: ESYS_TR,
         inData: *const TPM2B_MAX_BUFFER,
         decrypt: TPMI_YES_NO,
-        mode: TPMI_ALG_SYM_MODE,
+        mode: TPMI_ALG_CIPHER_MODE,
         ivIn: *const TPM2B_IV,
         outData: *mut *mut TPM2B_MAX_BUFFER,
         ivOut: *mut *mut TPM2B_IV,
@@ -11583,7 +12674,7 @@ extern "C" {
         shandle3: ESYS_TR,
         inData: *const TPM2B_MAX_BUFFER,
         decrypt: TPMI_YES_NO,
-        mode: TPMI_ALG_SYM_MODE,
+        mode: TPMI_ALG_CIPHER_MODE,
         ivIn: *const TPM2B_IV,
     ) -> TSS2_RC;
 }
@@ -11602,7 +12693,7 @@ extern "C" {
         shandle3: ESYS_TR,
         data: *const TPM2B_MAX_BUFFER,
         hashAlg: TPMI_ALG_HASH,
-        hierarchy: TPMI_RH_HIERARCHY,
+        hierarchy: ESYS_TR,
         outHash: *mut *mut TPM2B_DIGEST,
         validation: *mut *mut TPMT_TK_HASHCHECK,
     ) -> TSS2_RC;
@@ -11615,7 +12706,7 @@ extern "C" {
         shandle3: ESYS_TR,
         data: *const TPM2B_MAX_BUFFER,
         hashAlg: TPMI_ALG_HASH,
-        hierarchy: TPMI_RH_HIERARCHY,
+        hierarchy: ESYS_TR,
     ) -> TSS2_RC;
 }
 extern "C" {
@@ -11652,6 +12743,35 @@ extern "C" {
     pub fn Esys_HMAC_Finish(
         esysContext: *mut ESYS_CONTEXT,
         outHMAC: *mut *mut TPM2B_DIGEST,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_MAC_Async(
+        esysContext: *mut ESYS_CONTEXT,
+        handle: ESYS_TR,
+        handleSession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        buffer: *const TPM2B_MAX_BUFFER,
+        inScheme: TPMI_ALG_MAC_SCHEME,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_MAC_Finish(
+        esysContext: *mut ESYS_CONTEXT,
+        outMAC: *mut *mut TPM2B_DIGEST,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_MAC(
+        esysContext: *mut ESYS_CONTEXT,
+        handle: ESYS_TR,
+        handleSession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        buffer: *const TPM2B_MAX_BUFFER,
+        inScheme: TPMI_ALG_MAC_SCHEME,
+        outMAC: *mut *mut TPM2B_DIGEST,
     ) -> TSS2_RC;
 }
 extern "C" {
@@ -11730,6 +12850,35 @@ extern "C" {
     ) -> TSS2_RC;
 }
 extern "C" {
+    pub fn Esys_MAC_Start(
+        esysContext: *mut ESYS_CONTEXT,
+        handle: ESYS_TR,
+        handleSession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        auth: *const TPM2B_AUTH,
+        inScheme: TPMI_ALG_MAC_SCHEME,
+        sequenceHandle: *mut ESYS_TR,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_MAC_Start_Async(
+        esysContext: *mut ESYS_CONTEXT,
+        handle: ESYS_TR,
+        handleSession1: ESYS_TR,
+        optionalSession2: ESYS_TR,
+        optionalSession3: ESYS_TR,
+        auth: *const TPM2B_AUTH,
+        inScheme: TPMI_ALG_MAC_SCHEME,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_MAC_Start_Finish(
+        esysContext: *mut ESYS_CONTEXT,
+        sequenceHandle: *mut ESYS_TR,
+    ) -> TSS2_RC;
+}
+extern "C" {
     pub fn Esys_HashSequenceStart(
         esysContext: *mut ESYS_CONTEXT,
         shandle1: ESYS_TR,
@@ -11787,7 +12936,7 @@ extern "C" {
         shandle2: ESYS_TR,
         shandle3: ESYS_TR,
         buffer: *const TPM2B_MAX_BUFFER,
-        hierarchy: TPMI_RH_HIERARCHY,
+        hierarchy: ESYS_TR,
         result: *mut *mut TPM2B_DIGEST,
         validation: *mut *mut TPMT_TK_HASHCHECK,
     ) -> TSS2_RC;
@@ -11800,7 +12949,7 @@ extern "C" {
         shandle2: ESYS_TR,
         shandle3: ESYS_TR,
         buffer: *const TPM2B_MAX_BUFFER,
-        hierarchy: TPMI_RH_HIERARCHY,
+        hierarchy: ESYS_TR,
     ) -> TSS2_RC;
 }
 extern "C" {
@@ -11906,6 +13055,43 @@ extern "C" {
     pub fn Esys_CertifyCreation_Finish(
         esysContext: *mut ESYS_CONTEXT,
         certifyInfo: *mut *mut TPM2B_ATTEST,
+        signature: *mut *mut TPMT_SIGNATURE,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_CertifyX509(
+        esysContext: *mut ESYS_CONTEXT,
+        objectHandle: ESYS_TR,
+        signHandle: ESYS_TR,
+        shandle1: ESYS_TR,
+        shandle2: ESYS_TR,
+        shandle3: ESYS_TR,
+        reserved: *const TPM2B_DATA,
+        inScheme: *const TPMT_SIG_SCHEME,
+        partialCertificate: *const TPM2B_MAX_BUFFER,
+        addedToCertificate: *mut *mut TPM2B_MAX_BUFFER,
+        tbsDigest: *mut *mut TPM2B_DIGEST,
+        signature: *mut *mut TPMT_SIGNATURE,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_CertifyX509_Async(
+        esysContext: *mut ESYS_CONTEXT,
+        objectHandle: ESYS_TR,
+        signHandle: ESYS_TR,
+        shandle1: ESYS_TR,
+        shandle2: ESYS_TR,
+        shandle3: ESYS_TR,
+        reserved: *const TPM2B_DATA,
+        inScheme: *const TPMT_SIG_SCHEME,
+        partialCertificate: *const TPM2B_MAX_BUFFER,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Esys_CertifyX509_Finish(
+        esysContext: *mut ESYS_CONTEXT,
+        addedToCertificate: *mut *mut TPM2B_MAX_BUFFER,
+        tbsDigest: *mut *mut TPM2B_DIGEST,
         signature: *mut *mut TPMT_SIGNATURE,
     ) -> TSS2_RC;
 }
@@ -12945,7 +14131,7 @@ extern "C" {
         shandle1: ESYS_TR,
         shandle2: ESYS_TR,
         shandle3: ESYS_TR,
-        enable: TPMI_RH_ENABLES,
+        enable: ESYS_TR,
         state: TPMI_YES_NO,
     ) -> TSS2_RC;
 }
@@ -12956,7 +14142,7 @@ extern "C" {
         shandle1: ESYS_TR,
         shandle2: ESYS_TR,
         shandle3: ESYS_TR,
-        enable: TPMI_RH_ENABLES,
+        enable: ESYS_TR,
         state: TPMI_YES_NO,
     ) -> TSS2_RC;
 }
@@ -13863,6 +15049,12 @@ extern "C" {
         sys_context: *mut *mut TSS2_SYS_CONTEXT,
     ) -> TSS2_RC;
 }
+extern "C" {
+    pub fn Esys_SetCryptoCallbacks(
+        esysContext: *mut ESYS_CONTEXT,
+        callbacks: *mut ESYS_CRYPTO_CALLBACKS,
+    ) -> TSS2_RC;
+}
 pub type __gwchar_t = ::std::os::raw::c_int;
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone)]
@@ -13939,10 +15131,6 @@ extern "C" {
         __base: ::std::os::raw::c_int,
     ) -> uintmax_t;
 }
-pub const idtype_t_P_ALL: idtype_t = 0;
-pub const idtype_t_P_PID: idtype_t = 1;
-pub const idtype_t_P_PGID: idtype_t = 2;
-pub type idtype_t = ::std::os::raw::c_uint;
 pub type _Float32 = f32;
 pub type _Float64 = f64;
 pub type _Float32x = f64;
@@ -14354,6 +15542,102 @@ pub type blkcnt_t = __blkcnt_t;
 pub type fsblkcnt_t = __fsblkcnt_t;
 pub type fsfilcnt_t = __fsfilcnt_t;
 #[repr(C)]
+#[derive(Copy, Clone)]
+pub union __atomic_wide_counter {
+    pub __value64: ::std::os::raw::c_ulonglong,
+    pub __value32: __atomic_wide_counter__bindgen_ty_1,
+}
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct __atomic_wide_counter__bindgen_ty_1 {
+    pub __low: ::std::os::raw::c_uint,
+    pub __high: ::std::os::raw::c_uint,
+}
+#[test]
+fn bindgen_test_layout___atomic_wide_counter__bindgen_ty_1() {
+    const UNINIT: ::std::mem::MaybeUninit<__atomic_wide_counter__bindgen_ty_1> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<__atomic_wide_counter__bindgen_ty_1>(),
+        8usize,
+        concat!("Size of: ", stringify!(__atomic_wide_counter__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<__atomic_wide_counter__bindgen_ty_1>(),
+        4usize,
+        concat!(
+            "Alignment of ",
+            stringify!(__atomic_wide_counter__bindgen_ty_1)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).__low) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__atomic_wide_counter__bindgen_ty_1),
+            "::",
+            stringify!(__low)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).__high) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__atomic_wide_counter__bindgen_ty_1),
+            "::",
+            stringify!(__high)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout___atomic_wide_counter() {
+    const UNINIT: ::std::mem::MaybeUninit<__atomic_wide_counter> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<__atomic_wide_counter>(),
+        8usize,
+        concat!("Size of: ", stringify!(__atomic_wide_counter))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<__atomic_wide_counter>(),
+        8usize,
+        concat!("Alignment of ", stringify!(__atomic_wide_counter))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).__value64) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__atomic_wide_counter),
+            "::",
+            stringify!(__value64)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).__value32) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__atomic_wide_counter),
+            "::",
+            stringify!(__value32)
+        )
+    );
+}
+impl Default for __atomic_wide_counter {
+    fn default() -> Self {
+        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __pthread_internal_list {
     pub __prev: *mut __pthread_internal_list,
@@ -14717,211 +16001,13 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct __pthread_cond_s {
-    pub __bindgen_anon_1: __pthread_cond_s__bindgen_ty_1,
-    pub __bindgen_anon_2: __pthread_cond_s__bindgen_ty_2,
+    pub __wseq: __atomic_wide_counter,
+    pub __g1_start: __atomic_wide_counter,
     pub __g_refs: [::std::os::raw::c_uint; 2usize],
     pub __g_size: [::std::os::raw::c_uint; 2usize],
     pub __g1_orig_size: ::std::os::raw::c_uint,
     pub __wrefs: ::std::os::raw::c_uint,
     pub __g_signals: [::std::os::raw::c_uint; 2usize],
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union __pthread_cond_s__bindgen_ty_1 {
-    pub __wseq: ::std::os::raw::c_ulonglong,
-    pub __wseq32: __pthread_cond_s__bindgen_ty_1__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct __pthread_cond_s__bindgen_ty_1__bindgen_ty_1 {
-    pub __low: ::std::os::raw::c_uint,
-    pub __high: ::std::os::raw::c_uint,
-}
-#[test]
-fn bindgen_test_layout___pthread_cond_s__bindgen_ty_1__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_cond_s__bindgen_ty_1__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<__pthread_cond_s__bindgen_ty_1__bindgen_ty_1>(),
-        8usize,
-        concat!(
-            "Size of: ",
-            stringify!(__pthread_cond_s__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__pthread_cond_s__bindgen_ty_1__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(__pthread_cond_s__bindgen_ty_1__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__low) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__pthread_cond_s__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(__low)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__high) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__pthread_cond_s__bindgen_ty_1__bindgen_ty_1),
-            "::",
-            stringify!(__high)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout___pthread_cond_s__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_cond_s__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<__pthread_cond_s__bindgen_ty_1>(),
-        8usize,
-        concat!("Size of: ", stringify!(__pthread_cond_s__bindgen_ty_1))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__pthread_cond_s__bindgen_ty_1>(),
-        8usize,
-        concat!("Alignment of ", stringify!(__pthread_cond_s__bindgen_ty_1))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__wseq) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__pthread_cond_s__bindgen_ty_1),
-            "::",
-            stringify!(__wseq)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__wseq32) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__pthread_cond_s__bindgen_ty_1),
-            "::",
-            stringify!(__wseq32)
-        )
-    );
-}
-impl Default for __pthread_cond_s__bindgen_ty_1 {
-    fn default() -> Self {
-        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
-        unsafe {
-            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-            s.assume_init()
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union __pthread_cond_s__bindgen_ty_2 {
-    pub __g1_start: ::std::os::raw::c_ulonglong,
-    pub __g1_start32: __pthread_cond_s__bindgen_ty_2__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Debug, Default, Copy, Clone)]
-pub struct __pthread_cond_s__bindgen_ty_2__bindgen_ty_1 {
-    pub __low: ::std::os::raw::c_uint,
-    pub __high: ::std::os::raw::c_uint,
-}
-#[test]
-fn bindgen_test_layout___pthread_cond_s__bindgen_ty_2__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_cond_s__bindgen_ty_2__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<__pthread_cond_s__bindgen_ty_2__bindgen_ty_1>(),
-        8usize,
-        concat!(
-            "Size of: ",
-            stringify!(__pthread_cond_s__bindgen_ty_2__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__pthread_cond_s__bindgen_ty_2__bindgen_ty_1>(),
-        4usize,
-        concat!(
-            "Alignment of ",
-            stringify!(__pthread_cond_s__bindgen_ty_2__bindgen_ty_1)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__low) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__pthread_cond_s__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(__low)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__high) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__pthread_cond_s__bindgen_ty_2__bindgen_ty_1),
-            "::",
-            stringify!(__high)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout___pthread_cond_s__bindgen_ty_2() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_cond_s__bindgen_ty_2> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<__pthread_cond_s__bindgen_ty_2>(),
-        8usize,
-        concat!("Size of: ", stringify!(__pthread_cond_s__bindgen_ty_2))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__pthread_cond_s__bindgen_ty_2>(),
-        8usize,
-        concat!("Alignment of ", stringify!(__pthread_cond_s__bindgen_ty_2))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__g1_start) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__pthread_cond_s__bindgen_ty_2),
-            "::",
-            stringify!(__g1_start)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__g1_start32) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__pthread_cond_s__bindgen_ty_2),
-            "::",
-            stringify!(__g1_start32)
-        )
-    );
-}
-impl Default for __pthread_cond_s__bindgen_ty_2 {
-    fn default() -> Self {
-        let mut s = ::std::mem::MaybeUninit::<Self>::uninit();
-        unsafe {
-            ::std::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-            s.assume_init()
-        }
-    }
 }
 #[test]
 fn bindgen_test_layout___pthread_cond_s() {
@@ -14936,6 +16022,26 @@ fn bindgen_test_layout___pthread_cond_s() {
         ::std::mem::align_of::<__pthread_cond_s>(),
         8usize,
         concat!("Alignment of ", stringify!(__pthread_cond_s))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).__wseq) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__pthread_cond_s),
+            "::",
+            stringify!(__wseq)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).__g1_start) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__pthread_cond_s),
+            "::",
+            stringify!(__g1_start)
+        )
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).__g_refs) as usize - ptr as usize },
@@ -14996,6 +16102,38 @@ impl Default for __pthread_cond_s {
             s.assume_init()
         }
     }
+}
+pub type __tss_t = ::std::os::raw::c_uint;
+pub type __thrd_t = ::std::os::raw::c_ulong;
+#[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
+pub struct __once_flag {
+    pub __data: ::std::os::raw::c_int,
+}
+#[test]
+fn bindgen_test_layout___once_flag() {
+    const UNINIT: ::std::mem::MaybeUninit<__once_flag> = ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<__once_flag>(),
+        4usize,
+        concat!("Size of: ", stringify!(__once_flag))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<__once_flag>(),
+        4usize,
+        concat!("Alignment of ", stringify!(__once_flag))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__once_flag),
+            "::",
+            stringify!(__data)
+        )
+    );
 }
 pub type pthread_t = ::std::os::raw::c_ulong;
 #[repr(C)]
@@ -15794,6 +16932,15 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
+    pub fn arc4random() -> __uint32_t;
+}
+extern "C" {
+    pub fn arc4random_buf(__buf: *mut ::std::os::raw::c_void, __size: size_t);
+}
+extern "C" {
+    pub fn arc4random_uniform(__upper_bound: __uint32_t) -> __uint32_t;
+}
+extern "C" {
     pub fn malloc(__size: ::std::os::raw::c_ulong) -> *mut ::std::os::raw::c_void;
 }
 extern "C" {
@@ -15809,14 +16956,14 @@ extern "C" {
     ) -> *mut ::std::os::raw::c_void;
 }
 extern "C" {
+    pub fn free(__ptr: *mut ::std::os::raw::c_void);
+}
+extern "C" {
     pub fn reallocarray(
         __ptr: *mut ::std::os::raw::c_void,
         __nmemb: size_t,
         __size: size_t,
     ) -> *mut ::std::os::raw::c_void;
-}
-extern "C" {
-    pub fn free(__ptr: *mut ::std::os::raw::c_void);
 }
 extern "C" {
     pub fn alloca(__size: ::std::os::raw::c_ulong) -> *mut ::std::os::raw::c_void;
@@ -15832,7 +16979,10 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn aligned_alloc(__alignment: size_t, __size: size_t) -> *mut ::std::os::raw::c_void;
+    pub fn aligned_alloc(
+        __alignment: ::std::os::raw::c_ulong,
+        __size: ::std::os::raw::c_ulong,
+    ) -> *mut ::std::os::raw::c_void;
 }
 extern "C" {
     pub fn abort() -> !;
@@ -16103,22 +17253,6 @@ extern "C" {
 }
 extern "C" {
     pub fn Tss2_TctiLdr_FreeInfo(info: *mut *mut TSS2_TCTI_INFO);
-}
-extern "C" {
-    pub fn Tss2_MU_BYTE_Marshal(
-        src: BYTE,
-        buffer: *mut u8,
-        buffer_size: size_t,
-        offset: *mut size_t,
-    ) -> TSS2_RC;
-}
-extern "C" {
-    pub fn Tss2_MU_BYTE_Unmarshal(
-        buffer: *const u8,
-        buffer_size: size_t,
-        offset: *mut size_t,
-        dest: *mut BYTE,
-    ) -> TSS2_RC;
 }
 extern "C" {
     pub fn Tss2_MU_INT8_Marshal(
@@ -16953,22 +18087,6 @@ extern "C" {
     ) -> TSS2_RC;
 }
 extern "C" {
-    pub fn Tss2_MU_TPMS_ALGORITHM_DESCRIPTION_Marshal(
-        src: *const TPMS_ALGORITHM_DESCRIPTION,
-        buffer: *mut u8,
-        buffer_size: size_t,
-        offset: *mut size_t,
-    ) -> TSS2_RC;
-}
-extern "C" {
-    pub fn Tss2_MU_TPMS_ALGORITHM_DESCRIPTION_Unmarshal(
-        buffer: *const u8,
-        buffer_size: size_t,
-        offset: *mut size_t,
-        dest: *mut TPMS_ALGORITHM_DESCRIPTION,
-    ) -> TSS2_RC;
-}
-extern "C" {
     pub fn Tss2_MU_TPMS_TAGGED_PROPERTY_Marshal(
         src: *const TPMS_TAGGED_PROPERTY,
         buffer: *mut u8,
@@ -17497,6 +18615,38 @@ extern "C" {
     ) -> TSS2_RC;
 }
 extern "C" {
+    pub fn Tss2_MU_TPMS_ACT_DATA_Marshal(
+        src: *const TPMS_ACT_DATA,
+        buffer: *mut u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPMS_ACT_DATA_Unmarshal(
+        buffer: *const u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+        dest: *mut TPMS_ACT_DATA,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPMS_NV_DIGEST_CERTIFY_INFO_Marshal(
+        src: *const TPMS_NV_DIGEST_CERTIFY_INFO,
+        buffer: *mut u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPMS_NV_DIGEST_CERTIFY_INFO_Unmarshal(
+        buffer: *const u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+        dest: *mut TPMS_NV_DIGEST_CERTIFY_INFO,
+    ) -> TSS2_RC;
+}
+extern "C" {
     pub fn Tss2_MU_TPML_CC_Marshal(
         src: *const TPML_CC,
         buffer: *mut u8,
@@ -17673,22 +18823,6 @@ extern "C" {
     ) -> TSS2_RC;
 }
 extern "C" {
-    pub fn Tss2_MU_TPML_INTEL_PTT_PROPERTY_Marshal(
-        src: *const TPML_INTEL_PTT_PROPERTY,
-        buffer: *mut u8,
-        buffer_size: size_t,
-        offset: *mut size_t,
-    ) -> TSS2_RC;
-}
-extern "C" {
-    pub fn Tss2_MU_TPML_INTEL_PTT_PROPERTY_Unmarshal(
-        buffer: *const u8,
-        buffer_size: size_t,
-        offset: *mut size_t,
-        dest: *mut TPML_INTEL_PTT_PROPERTY,
-    ) -> TSS2_RC;
-}
-extern "C" {
     pub fn Tss2_MU_TPML_AC_CAPABILITIES_Marshal(
         src: *const TPML_AC_CAPABILITIES,
         buffer: *mut u8,
@@ -17702,6 +18836,38 @@ extern "C" {
         buffer_size: size_t,
         offset: *mut size_t,
         dest: *mut TPML_AC_CAPABILITIES,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPML_TAGGED_POLICY_Marshal(
+        src: *const TPML_TAGGED_POLICY,
+        buffer: *mut u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPML_TAGGED_POLICY_Unmarshal(
+        buffer: *const u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+        dest: *mut TPML_TAGGED_POLICY,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPML_ACT_DATA_Marshal(
+        src: *const TPML_ACT_DATA,
+        buffer: *mut u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPML_ACT_DATA_Unmarshal(
+        buffer: *const u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+        dest: *mut TPML_ACT_DATA,
     ) -> TSS2_RC;
 }
 extern "C" {
@@ -18295,6 +19461,22 @@ extern "C" {
     ) -> TSS2_RC;
 }
 extern "C" {
+    pub fn Tss2_MU_BYTE_Marshal(
+        in_: BYTE,
+        buffer: *mut u8,
+        size: size_t,
+        offset: *mut size_t,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_BYTE_Unmarshal(
+        buffer: *const u8,
+        size: size_t,
+        offset: *mut size_t,
+        out: *mut BYTE,
+    ) -> TSS2_RC;
+}
+extern "C" {
     pub fn Tss2_MU_TPM2_SE_Marshal(
         in_: TPM2_SE,
         buffer: *mut u8,
@@ -18340,5 +19522,37 @@ extern "C" {
         size: size_t,
         offset: *mut size_t,
         out: *mut TPMS_EMPTY,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPM2B_MAX_CAP_BUFFER_Marshal(
+        src: *const TPM2B_MAX_CAP_BUFFER,
+        buffer: *mut u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPM2B_MAX_CAP_BUFFER_Unmarshal(
+        buffer: *const u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+        dest: *mut TPM2B_MAX_CAP_BUFFER,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPML_INTEL_PTT_PROPERTY_Marshal(
+        src: *const TPML_INTEL_PTT_PROPERTY,
+        buffer: *mut u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+    ) -> TSS2_RC;
+}
+extern "C" {
+    pub fn Tss2_MU_TPML_INTEL_PTT_PROPERTY_Unmarshal(
+        buffer: *const u8,
+        buffer_size: size_t,
+        offset: *mut size_t,
+        dest: *mut TPML_INTEL_PTT_PROPERTY,
     ) -> TSS2_RC;
 }
